@@ -1,0 +1,12 @@
+<h1>All Quotes</h1>
+<div>
+    @{
+        foreach(var quote in ViewBag.AllQuotes){
+            <p>Name: @quote.Name</p>
+            <p>Quote: @quote.Content</p>
+            <hr>
+        }
+    }
+</div>
+
+<a href="/">Back</a>

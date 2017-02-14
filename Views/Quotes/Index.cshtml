@@ -1,5 +1,23 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<h1>Default Blank Page~</h1>
-<p>Get to adding stuff</p>
+<h1>Welcome to the Quoting Dojo</h1><br>
+<form action="AddQuote" method="post">
+    Your Name: <input type="text" name="Name"><br>
+    Your Quote: <br> <textarea name="Content" id="" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="Add Quote" class="btn btn-success">
+</form><br>
+
+<div>
+    @{
+        foreach(var error in ViewBag.errors){
+            //If there are any errors for a field...
+            if(@error.Errors.Count > 0){
+                // We show the first error for that field
+                <p>@error.Errors[0].ErrorMessage</p>
+            }
+        }
+    }
+</div>
+
+<a href="Quotes"><button class="btn btn-success">View All Quotes</button></a>
